@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/Trioxis/aws-q/issues"
   },
-  "homepage": "https://github.com/Trioxis/aws-q"
+  "homepage": "https://github.com/Trioxis/aws-q",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "grunt": "^0.4.5",
+    "mocha": "^2.0.1"
+  }
 }
