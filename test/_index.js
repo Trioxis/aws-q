@@ -29,9 +29,10 @@ describe('Aws.Request.prototype.then function',function(done){
 		var ec2 = new AWS.EC2();
 		var promise = ec2.describeAccountAttributes({}).then()
 		.then(function (result) {
-			// Not quite sure how to check that it's a promise because 
-			// `expect(promise).to.be.a('Promise');` doesn't work
+
+			expect(promise).to.be.a('Promise');
 			expect(promise).to.have.keys(['then','catch','done']);
+			
 			done();
 		});
 
