@@ -9,6 +9,10 @@ module.exports.InjectMagic = function(AWS){
 			console.log('success');
 			deferred.resolve(response);
 		}).
+		on('error', function(response) {
+			console.log('reject');
+			deferred.reject(response);
+		}).
 		send();
 
 		return deferred.promise.then(thenCallback);
