@@ -4,6 +4,10 @@ module.exports.InjectMagic = function(AWS){
 	AWS.Request.prototype.then = function(){
 		var deferred = Q.defer();
 		
+		process.nextTick(function(){
+			deferred.resolve({});
+		});
+
 		return deferred.promise;
 	};
 };
