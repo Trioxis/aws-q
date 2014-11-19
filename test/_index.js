@@ -21,21 +21,24 @@ describe('AwsQ entry point',function(){
 	});
 });
 
-describe('Aws.Request.prototype.then function',function(){
+describe('Aws.Request.prototype',function(){
 
-	it('should return a Q promise',function(done){
+	it('should support q `then`',function(done){
 		var AWS = require('aws-sdk');
 		AwsQ.InjectMagic(AWS);
 
-		var ec2 = new AWS.EC2();
+		var ec2 = new AWS.EC2({ region: 'us-west-2' });
 		var promise = ec2.describeAccountAttributes({})
 		.then(function (result) {
 			// If we got here, it worked
-
-			expect(promise).to.be.ok();
+			expect(result).to.be.ok();
+			expect(result.error).to.be(null);
+		})
+		.catch(function(err){
+			throw err;
+		})
+		.done(function(){
 			done();
 		});
-
-		
 	});
 });
