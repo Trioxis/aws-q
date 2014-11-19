@@ -28,10 +28,10 @@ describe('Aws.Request.prototype.then function',function(){
 		AwsQ.InjectMagic(AWS);
 
 		var ec2 = new AWS.EC2();
-		var promise = ec2.describeAccountAttributes({}).then()
+		var promise = ec2.describeAccountAttributes({})
 		.then(function (result) {
 			// If we got here, it worked
-			
+
 			expect(promise).to.be.ok();
 			done();
 		});
