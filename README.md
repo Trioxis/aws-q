@@ -27,4 +27,4 @@ Now you can be a boss
         console.log('wow aws-q');
     });
 
-Enough said
+Check out the [Q documentation](https://www.npmjs.org/package/q) for more
