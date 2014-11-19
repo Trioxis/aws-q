@@ -7,6 +7,7 @@ describe('entry point',function(){
 		AwsQ.InjectMagic(AWS);
 
 		expect(AWS.Request.prototype).to.have.property("then");
+		expect(AWS.Request.prototype.then).to.be.a('function');
 
 	});
 });
