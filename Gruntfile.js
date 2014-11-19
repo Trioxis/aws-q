@@ -11,9 +11,14 @@ module.exports = function (grunt) {
 				src: ['test/**/*.js']
 			},
 		},
+		jshint:{
+			all:['*.js','test/**/*.js']
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-simple-mocha');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	grunt.registerTask('test', ['simplemocha']);
+	grunt.registerTask('build', ['jshint']);
+	grunt.registerTask('test', ['build','simplemocha']);
 };
