@@ -1,6 +1,6 @@
 var Q = require('q');
 
-module.exports.InjectMagic = function(AWS){
+module.exports = function(AWS){
 	AWS.Request.prototype.promise = function(promiseCallback){
 		var deferred = Q.defer();
 

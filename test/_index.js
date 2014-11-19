@@ -3,7 +3,7 @@ var AwsQ = require("../index.js");
 var AWS = require('aws-sdk');
 
 before(function(){
-	AwsQ.InjectMagic(AWS);
+	AwsQ(AWS);
 });
 
 describe('Aws.Request.prototype',function(){
