@@ -1,7 +1,7 @@
 var Q = require('q');
 
 module.exports = function(AWS){
-	AWS.Request.prototype.promise = function(promiseCallback){
+	AWS.Request.prototype.promise = function(){
 		var deferred = Q.defer();
 
 		this.
@@ -15,7 +15,7 @@ module.exports = function(AWS){
 		}).
 		send();
 
-		return deferred.promise.then(promiseCallback);
+		return deferred.promise;
 	};
 
 	AWS.Request.prototype.then = function(callback){
