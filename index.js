@@ -1,21 +1,19 @@
 var Q = require('q');
 
 module.exports = function(AWS){
-	AWS.Request.prototype.promise = function(promiseCallback){
+	AWS.Request.prototype.promise = function(){
 		var deferred = Q.defer();
 
 		this.
 		on('success', function(response) {
-			console.log('success');
 			deferred.resolve(response);
 		}).
 		on('error', function(response) {
-			console.log('reject');
 			deferred.reject(response);
 		}).
 		send();
 
-		return deferred.promise.then(promiseCallback);
+		return deferred.promise;
 	};
 
 	AWS.Request.prototype.then = function(callback){
