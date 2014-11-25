@@ -39,7 +39,9 @@ describe('Aws.Request.prototype',function(){
 		.then(function (result) {
 			// If we got here, it worked
 			expect(result).to.be.ok();
-			expect(result.error).to.be(null);
+			expect(result).to.have.key('AccountAttributes');
+			expect(result.AccountAttributes).to.be.an(Array);
+
 		})
 		.catch(function(err){
 			throw err;
