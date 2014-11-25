@@ -63,6 +63,8 @@ describe('Aws.Request.prototype',function(){
 		})
 		.catch(function(err){
 			failed = true;
+			console.log(err);
+			expect(err).to.have.keys(['message','code','time']);
 		})
 		.done(function(){
 			if(!failed)
