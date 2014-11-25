@@ -1,10 +1,10 @@
 # aws-q
 
-Give the AWS SDK some Q magic
+Give the AWS SDK some [Q promise](https://www.npmjs.org/package/q) magic
 
 Makes AWS Requests act like Q by performing a filthy hack
 
-### Usage
+## Usage
 
 Setup the aws-q like so
 
@@ -27,4 +27,8 @@ Now you can be a boss
         console.log('wow aws-q');
     });
 
-Check out the [Q documentation](https://www.npmjs.org/package/q) for more
+## Release History
+
+- 0.1.2 Promises now return data instead of response **(Breaking changes)**
+- 0.1.1 Fix bug with `.Promise()`
+- 0.1.0 Initial implementation

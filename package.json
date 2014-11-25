@@ -1,7 +1,7 @@
 {
   "name": "aws-q",
-  "version": "0.1.1",
-  "description": "Give the AWS SDK some Q magic",
+  "version": "0.1.2",
+  "description": "Give the AWS SDK some Q promise magic",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"

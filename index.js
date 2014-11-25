@@ -6,7 +6,7 @@ module.exports = function(AWS){
 
 		this.
 		on('success', function(response) {
-			deferred.resolve(response);
+			deferred.resolve(response.data);
 		}).
 		on('error', function(response) {
 			deferred.reject(response);
